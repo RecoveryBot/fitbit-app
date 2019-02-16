@@ -1,4 +1,5 @@
 <svg>
+  <rect id="body" x="0" y="0" width="100%" height="100%" fill="black" />
   <text id="hrm-label" class="sensor-label" x="50%" y="50%-16">heart rate</text>
   <text id="hrm-data" class="sensor-data" x="50%" y="50%+16">{ ... }</text>
 </svg>
