@@ -13,7 +13,10 @@
     "appDisplayName": "Treehacks 2019",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
-    "requestedPermissions": [],
+    "requestedPermissions": [
+      "access_heart_rate",
+      "run_background"
+    ],
     "buildTargets": [
       "higgs",
       "meson"

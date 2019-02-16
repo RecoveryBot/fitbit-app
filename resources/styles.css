@@ -10,3 +10,19 @@
   height: 100%;
   fill: white;
 }
+
+.sensor-label {
+  font-family: System-Regular;
+  fill: white;
+  text-anchor: middle;
+  text-length: 32;
+  font-size: 20;
+}
+
+.sensor-data {
+  font-family: System-Light;
+  fill: yellow;
+  text-anchor: middle;
+  text-length: 32;
+  font-size: 20;
+}
