@@ -69,10 +69,9 @@ function showInitial() {
 }
 
 function showAlert() {
-  if (alertNo !== 2) alertNo = 1;
   setHeader('hidden');
   moveHrm(48);
-  alert.text = alertNo === 1 ? 'Your heart rate has dramatically increased. Are you okay?' : 'Would you like to reach one of your contacts?';
+  alert.text = alertNo === 0 ? 'Your heart rate has dramatically increased. Are you okay?' : 'Would you like to reach one of your contacts?';
   setAlert('visible');
   body.style.fill = 'tomato';
   vibration.start('alert');
@@ -99,17 +98,16 @@ function disableAlert() {
 }
 
 yesButton.onclick = event => {
-  if (alertNo === 1) {
-    alertNo = 0;
+  if (alertNo === 0) {
     disableAlert();
-  } else if (alertNo === 2) {
+  } else if (alertNo === 1) {
   }
 };
 
 noButton.onclick = event => {
-  if (alertNo === 1) {
-    alertNo = 2;
-  } else if (alertNo === 2) {
+  if (alertNo === 0) {
+    alertNo = 1;
+  } else if (alertNo === 1) {
     alertNo = 0;
     disableAlert();
   }
