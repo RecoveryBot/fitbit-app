@@ -1,7 +1,7 @@
 /*
   Settings
 */
-const ALERT_THRESHOLD = 85;
+const ALERT_THRESHOLD = 90;
 
 /*
   Modules
