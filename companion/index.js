@@ -5,8 +5,8 @@ import { me } from 'companion';
 import { peerSocket } from 'messaging';
 import { settingsStorage } from 'settings';
 
-// Wake up Companion every minute.
-me.wakeInterval = 1000 * 60;
+// Wake up Companion every 5 minute.
+me.wakeInterval = 300000;
 
 /*
   Messaging
