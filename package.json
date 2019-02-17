@@ -1,5 +1,5 @@
 {
-  "name": "treehacks2019",
+  "name": "recoverybot",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
@@ -10,7 +10,7 @@
   "fitbit": {
     "appUUID": "f897913a-f95d-41ff-92e5-ba5cf59e96a7",
     "appType": "app",
-    "appDisplayName": "Treehacks 2019",
+    "appDisplayName": "Recovery Bot",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [
