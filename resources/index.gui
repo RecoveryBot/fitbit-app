@@ -1,5 +1,26 @@
 <svg>
-  <rect id="body" x="0" y="0" width="100%" height="100%" fill="black" />
-  <text id="hrm-label" class="sensor-label" x="50%" y="50%-16">heart rate</text>
-  <text id="hrm-data" class="sensor-data" x="50%" y="50%+16">{ ... }</text>
+  <defs>
+    <symbol id="custom-textarea" type="dynamic-textarea" system-events="all">
+      <textarea id="text" x="0" y="0" width="100%" class="alert-text" />
+    </symbol>
+  </defs>
+
+  <rect id="body" x="0" y="0" width="100%" height="100%" fill="lightskyblue" />
+  <image id="logo" x="50%-50" y="25" width="100" height="100" href="icon.png" />
+  <text id="title" class="app-title" x="50%" y="137">Recovery Bot</text>
+  <text id="hrm-label" class="sensor-label" x="50%" y="50%+64">My Heart Rate</text>
+  <text id="hrm-data" class="sensor-data" x="50%" y="50%+88">{ ... }</text>
+  <use id="alert" href="#custom-textarea" x="0" y="45%" width="100%">
+    <set href="text" attributeName="text-buffer" to="Lorem ipsum dolor sit amet,
+    cum te cibo appareat. No per paulo hendrerit similique, vim et prima
+    appareat, ea elitr delectus deterruisset quo." />
+  </use>
+  <svg id="alert-buttons" x="0" y="100%-64">
+    <use class="alert-button" href="#square-button-negative" y="0" width="50%" height="25%" fill="red">
+      <set href="#text" attributeName="text-buffer" to="No" />
+    </use>
+    <use class="alert-button" href="#square-button-positive" x="50%" y="0" width="50%" height="25%" fill="green">
+      <set href="#text" attributeName="text-buffer" to="Yes" />
+    </use>
+  </svg>
 </svg>

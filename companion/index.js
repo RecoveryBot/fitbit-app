@@ -11,7 +11,8 @@ me.wakeInterval = 300000;
 /*
   Messaging
 */
-let userId = JSON.parse(settingsStorage.getItem('email')).name;
+const storage = JSON.parse(settingsStorage.getItem('email'));
+let userId = storage ? storage.name : '';
 
 peerSocket.onmessage = event => {
   const heartRate = event.data;
