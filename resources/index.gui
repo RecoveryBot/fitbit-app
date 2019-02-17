@@ -16,10 +16,10 @@
     appareat, ea elitr delectus deterruisset quo." />
   </use>
   <svg id="alert-buttons" x="0" y="100%-64">
-    <use class="alert-button" href="#square-button-negative" y="0" width="50%" height="25%" fill="red">
+    <use id="btn-n" href="#square-button-negative" y="0" width="50%" height="25%" fill="red">
       <set href="#text" attributeName="text-buffer" to="No" />
     </use>
-    <use class="alert-button" href="#square-button-positive" x="50%" y="0" width="50%" height="25%" fill="green">
+    <use id="btn-y" href="#square-button-positive" x="50%" y="0" width="50%" height="25%" fill="green">
       <set href="#text" attributeName="text-buffer" to="Yes" />
     </use>
   </svg>
