@@ -123,6 +123,10 @@ function disableAlert() {
 }
 
 function sendText() {
+  if (peerSocket.readyState === peerSocket.OPEN) {
+    // Send the data to peer as a message.
+    peerSocket.send('tx');
+  }
   alertNo = 2;
   alertButtons.style.visibility = 'hidden';
   alertStay = 5 * SECONDS;

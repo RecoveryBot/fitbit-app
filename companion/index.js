@@ -15,11 +15,18 @@ const storage = JSON.parse(settingsStorage.getItem('email'));
 let userId = storage ? storage.name : '';
 
 peerSocket.onmessage = event => {
-  const heartRate = event.data;
-  console.log('Heart Rate: ' + heartRate);
-  console.log('User ID: ' + userId);
-  if (userId) {
-    sendToServer(userId, heartRate);
+  const data = event.data;
+  if (data === 'tx') {
+    console.log('Calling alert');
+    if (userId) {
+      sentToTwilio(userId);
+    }
+  } else {
+    console.log('Heart Rate: ' + data);
+    console.log('User ID: ' + userId);
+    if (userId) {
+      sendToServer(userId, data);
+    }
   }
 };
 
@@ -36,8 +43,21 @@ settingsStorage.onchange = event => {
   POST to Server
 */
 const url = 'https://treehacks2019-server.azurewebsites.net';
+
 const sendToServer = (userId, heartRate) => {
   return fetch(`${url}/bpm?userId=${userId}&heartRate=${heartRate}`, {
+    method: 'POST',
+    mode: 'cors',
+    credentials: 'omit'
+  })
+  .then(res => {
+    console.log('Sent to server.');
+  })
+  .catch(err => console.error(err));
+};
+
+const sendToTwilio = (userId) => {
+  return fetch(`${url}/alert?userId=${userId}`, {
     method: 'POST',
     mode: 'cors',
     credentials: 'omit'
