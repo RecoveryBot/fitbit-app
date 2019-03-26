@@ -4,6 +4,7 @@
 import { me } from 'companion';
 import { peerSocket } from 'messaging';
 import { settingsStorage } from 'settings';
+import { config } from '../config';
 
 // Wake up Companion every 5 minute.
 me.wakeInterval = 300000;
@@ -42,10 +43,8 @@ settingsStorage.onchange = event => {
 /*
   POST to Server
 */
-const url = 'https://treehacks2019-server.azurewebsites.net';
-
 const sendToServer = (userId, heartRate) => {
-  return fetch(`${url}/bpm?userId=${userId}&heartRate=${heartRate}`, {
+  return fetch(`${config.server_url}/bpm?userId=${userId}&heartRate=${heartRate}`, {
     method: 'POST',
     mode: 'cors',
     credentials: 'omit'
@@ -57,7 +56,7 @@ const sendToServer = (userId, heartRate) => {
 };
 
 const sendToTwilio = (userId) => {
-  return fetch(`${url}/alert?userId=${userId}`, {
+  return fetch(`${config.server_url}/alert?userId=${userId}`, {
     method: 'POST',
     mode: 'cors',
     credentials: 'omit'

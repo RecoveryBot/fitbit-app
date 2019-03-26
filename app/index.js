@@ -1,16 +1,12 @@
 /*
-  Settings
-*/
-const ALERT_THRESHOLD = 90;
-const SECONDS = 1000;
-
-/*
   Modules
 */
 import { HeartRateSensor } from 'heart-rate';
 import { peerSocket } from 'messaging';
 import { vibration } from 'haptics';
 import document from 'document';
+import { config } from '../config';
+const SECONDS = 1000;
 
 /*
   Setup
@@ -51,7 +47,7 @@ function main() {
     peerSocket.send(heartRate);
   }
 
-  if (heartRate > ALERT_THRESHOLD) {
+  if (heartRate > config.alert_threshold) {
     if (alertStay > 0) {
       alertStay -= 1 * SECONDS;
       if (alertStay <= 0) {
