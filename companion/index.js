@@ -19,7 +19,7 @@ peerSocket.onmessage = event => {
   if (data === 'tx') {
     console.log('Calling alert');
     if (userId) {
-      sentToTwilio(userId);
+      sendToTwilio(userId);
     }
   } else {
     console.log('Heart Rate: ' + data);
